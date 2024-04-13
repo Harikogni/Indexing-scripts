@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# Get the current date in the format DDMMYY
+# current date in the format DDMMYY
 current_date_step4=$(date +"%d%m%y")
 
-# Get the current date in the format YYYY_MM_DD
+# current date in the format YYYY_MM_DD
 current_date_steps12=$(date +"%Y_%m_%d")
 
 # Function to process LP directory
 process_LP() {
     cd /opt/volume/dataupload/catalog/LP
 
-    # Construct the filename pattern with the current date
+    # Constructed the filename pattern with the current date
     filename="LP_FULL_OOS_retail_delta_inventory_${current_date_steps12}*"  # Use curly braces for variable expansion
 
     # Find and process the latest file matching the filename pattern
