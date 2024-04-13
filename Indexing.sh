@@ -22,6 +22,9 @@ process_LP() {
 
         # Validate LP file contents
         tail -3 /opt/volume/scripts/envioAutomaticoDelta/archivos/lp.txt
+
+         # Give all permissions to lp.txt
+        chmod 777 /opt/volume/scripts/envioAutomaticoDelta/archivos/lp.txt
     else
         echo "No matching file found for today's date in LP directory."
     fi
@@ -43,6 +46,9 @@ process_SB() {
 
         # Validate SB file contents
         tail -3 /opt/volume/scripts/envioAutomaticoDelta/archivos/sb.txt
+
+        # Give all permissions to sb.txt
+        chmod 777 /opt/volume/scripts/envioAutomaticoDelta/archivos/sb.txt
     else
         echo "No matching file found for today's date in SB directory."
     fi
@@ -64,6 +70,9 @@ process_PB() {
 
         # Validate PB file contents
         tail -3 /opt/volume/scripts/envioAutomaticoDelta/archivos/pb.txt
+
+        # Give all permissions to pb.txt
+        chmod 777 /opt/volume/scripts/envioAutomaticoDelta/archivos/pb.txt
     else
         echo "No matching file found for today's date in PB directory."
     fi
