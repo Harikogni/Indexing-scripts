@@ -20,11 +20,14 @@ process_LP() {
         ls -lrt "$latest_file"
         zcat "$latest_file" | awk -F '"' '{print $4}' > /opt/volume/scripts/envioAutomaticoDelta/archivos/lp.txt
 
+         # Give all permissions to lp.txt
+        chmod 777 /opt/volume/scripts/envioAutomaticoDelta/archivos/lp.txt
+
         # Validate LP file contents
         tail -3 /opt/volume/scripts/envioAutomaticoDelta/archivos/lp.txt
 
-         # Give all permissions to lp.txt
-        chmod 777 /opt/volume/scripts/envioAutomaticoDelta/archivos/lp.txt
+        # Run the corresponding script for LP
+        ./envioLp.sh /opt/volume/scripts/envioAutomaticoDelta/archivos/lp.txt "enviolp${current_date_step4}"
     else
         echo "No matching file found for today's date in LP directory."
     fi
@@ -44,11 +47,14 @@ process_SB() {
         ls -lrt "$latest_file"
         zcat "$latest_file" | awk -F '"' '{print $4}' > /opt/volume/scripts/envioAutomaticoDelta/archivos/sb.txt
 
+        # Give all permissions to sb.txt
+        chmod 777 /opt/volume/scripts/envioAutomaticoDelta/archivos/sb.txt
+
         # Validate SB file contents
         tail -3 /opt/volume/scripts/envioAutomaticoDelta/archivos/sb.txt
 
-        # Give all permissions to sb.txt
-        chmod 777 /opt/volume/scripts/envioAutomaticoDelta/archivos/sb.txt
+        # Run the corresponding script for SB
+        ./envioSb.sh /opt/volume/scripts/envioAutomaticoDelta/archivos/sb.txt "enviosb${current_date_step4}"
     else
         echo "No matching file found for today's date in SB directory."
     fi
@@ -68,11 +74,14 @@ process_PB() {
         ls -lrt "$latest_file"
         zcat "$latest_file" | awk -F '"' '{print $4}' > /opt/volume/scripts/envioAutomaticoDelta/archivos/pb.txt
 
+        # Give all permissions to pb.txt
+        chmod 777 /opt/volume/scripts/envioAutomaticoDelta/archivos/pb.txt
+
         # Validate PB file contents
         tail -3 /opt/volume/scripts/envioAutomaticoDelta/archivos/pb.txt
 
-        # Give all permissions to pb.txt
-        chmod 777 /opt/volume/scripts/envioAutomaticoDelta/archivos/pb.txt
+         # Run the corresponding script for PB
+        ./envioPb.sh /opt/volume/scripts/envioAutomaticoDelta/archivos/pb.txt "enviopb${current_date_step4}"
     else
         echo "No matching file found for today's date in PB directory."
     fi
